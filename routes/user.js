@@ -8,7 +8,7 @@ const PBKDF_SALT_LEN = 16;
 // Step 6: Implement registering a new user
 module.exports.register = (req, res) => {
     console.log("Body:", req.body);
-    if (!req.body.uunamename || !req.body.password) { return res.end(new Error('Invalid POST data')) };
+    if (!req.body.uname || !req.body.password) { return res.end(new Error('Invalid POST data')) };
     
     var instance = new usermodel();
     instance.uname = req.body.uname;
